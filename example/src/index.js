@@ -6,6 +6,8 @@ import {
   TableBody, TableHeader, TableHeaderItem, TableItem, TableRow, Table, Text
 } from "../../src";
 
+import CodeSlide from "spectacle-code-slide";
+
 import preloader from "../../src/utils/preloader";
 
 import createTheme from "../../src/themes/default";
@@ -59,7 +61,7 @@ export default class Presentation extends React.Component {
             <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
           </List>
         </Slide>
-        <Slide id="react-list-11" transition={["slide"]} bgColor="black">
+        <Slide id="react-list-11" transition={["none"]} bgColor="black">
           <List ordered>
             <ListItem textColor='primary' textFont='primary'>JSX</ListItem>
             <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
@@ -112,7 +114,7 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide id="live-coding1-res" transition={["slide"]} bgColor="black" align='center'>
-          <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-1.example")} margin="20px auto" />
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-2.example")} margin="20px auto" />
         </Slide>
         <Slide id="react-list-3" transition={["none"]} bgColor="black">
         <List ordered>
@@ -183,6 +185,23 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image src={ images.lifecycle } width='1000' />
         </Slide>
+        <CodeSlide lang="jsx" code={require("raw-loader!../assets/code/final-result.example")} transition={[]}
+          ranges={[
+            { loc: [0, 2] }, // import
+            { loc: [3, 4] }, // TodoListContainer
+            { loc: [73, 77] }, // TodoList
+            { loc: [86, 90] }, // TodoSubmit
+            { loc: [51, 71] }, // render
+            { loc: [4, 25] }, // initial constructor
+            { loc: [57, 63] }, // rendering todolist
+            { loc: [73, 85] }, // props being passed to TodoList
+            { loc: [7, 24] }, // state
+            { loc: [63, 68] }, // rendering TodoSubmit
+            { loc: [86, 101] }, // props being passed to TodoSubmit
+            { loc: [26, 44] }, // Functions to pass as props to TodoSubmit
+            { loc: [44, 50] }, // Functions to pass as props to TodoList
+            { loc: [102, 105], title: "Render!!" } // render
+          ]}/>
         <Slide id="react-intro-3" transition={["slide"]} bgColor="black">
           <Heading size={2} caps fit textColor="primary" textFont="primary" display="absolute">
             Why React?

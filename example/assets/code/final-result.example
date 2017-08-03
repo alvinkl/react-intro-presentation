@@ -1,0 +1,105 @@
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+
+class TodoListContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      todoList: [
+        {
+          name: "Code",
+          done: false
+        },
+        {
+          name: "Poop",
+          done: true
+        },
+        {
+          name: "Eat",
+          done: false
+        }
+      ],
+      input: ""
+    };
+  }
+
+  onInputChange = e => {
+    this.setState({ input: e.target.value });
+  };
+
+  addTodo = () => {
+    const { 
+      todoList, 
+      input: name } = this.state;
+
+    const newTodo = {
+      name,
+      done: false
+    };
+
+    todoList.push(newTodo);
+    this.setState({ todoList, input: "" });
+  };
+
+  markDone = i => {
+    const { todoList } = this.state;
+    todoList[i].done = !todoList[i].done;
+
+    this.setState({ todoList });
+  };
+
+  render() {
+    const { todoList, input } = this.state;
+
+    return (
+      <div>
+        <h1>Todo</h1>
+        { todoList.map((todo, i) => 
+          TodoList(
+            todo, 
+            i, 
+            this.markDone))
+        }
+        { TodoSubmit(
+          input, 
+          this.onInputChange, 
+          this.addTodo)
+        }
+      </div>
+    );
+  }
+}
+
+const TodoList = (
+  todo, 
+  i, 
+  markDone) =>
+  <li
+    key={ i }
+    onClick={ markDone.bind(this, i) }
+    style={ todo.done 
+      ? { textDecoration: "line-through" } 
+      : {} }>
+    {todo.name}
+  </li>;
+
+const TodoSubmit = (
+  text, 
+  onInputChange, 
+  addTodo) =>
+  <div>
+    Title:
+    <input
+      type="text" 
+      onChange={ onInputChange } 
+      value={ text } />
+    <button 
+      onClick={ addTodo }>
+      Submit
+    </button>
+  </div>;
+
+ReactDOM.render
+  (<TodoListContainer />, 
+  document.getElementById("root"));
