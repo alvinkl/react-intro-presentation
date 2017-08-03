@@ -10,7 +10,7 @@
     "build:dist": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx src",
     "deploy": "npm run build:dist && surge -p .",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "test": "jest --verbose"
   },
   "author": "",

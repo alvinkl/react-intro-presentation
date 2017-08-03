@@ -1,0 +1,21 @@
+class TodoListContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      todoList: ['Sleep', 'Coding', 'Movie'],
+    }
+  }
+
+  render() {
+    const { todoList } = this.state;
+
+    return (
+      <div>
+        <h1>Todo</h1>
+        { todoList.map((todo, i) => <TodoList key={i} todo={ todo } />) }
+        <TodoSubmit />
+      </div>
+    )
+  }
+}

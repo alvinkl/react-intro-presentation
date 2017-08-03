@@ -16,10 +16,17 @@ require("normalize.css");
 require("../../src/themes/default/index.css");
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  react: require('../assets/React-icon.png'),
+  quincy: require('../assets/quincy.png'),
+  charts: require('../assets/Charts.png'),
+  component1: require('../assets/component1.png'),
+  component2: require('../assets/component2.png'),
+  component3: require('../assets/component3.png'),
+  component4: require('../assets/component4.png'),
+  component5: require('../assets/component5.png'),
+  todo: require('../assets/todolist.png'),
+  stateComp: require('../assets/stateful-stateless.jpg'),
+  smartDumb: require('../assets/smart-dumb.png'),
 };
 
 preloader(images);
@@ -30,23 +37,126 @@ const theme = createTheme({
 
 export default class Presentation extends React.Component {
   render() {
-    return (
-      <Deck transition={["zoom", "slide"]} theme={theme} transitionDuration={500}>
-        <Slide transition={["zoom"]} bgColor="primary">
+    return <Deck transition={["zoom", "slide"]} theme={theme} transitionDuration={500}>
+        <Slide id="title" transition={["slide"]} bgColor="primary">
+          <Image src={images.react} width="600" />
           <Heading size={1} fit caps lineHeight={1} textColor="black">
             Introduction to React JS
           </Heading>
         </Slide>
-        <Slide id="wait-what" transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-          <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px" />
-          <Heading size={2} caps fit textColor="primary" textFont="primary">
-            Wait what?
+        <Slide id="introduction-myself" transition={["slide"]} bgColor="black">
+          <Heading size={3} textColor="primary" textFont="primary" fit>
+            Hello, my name is Alvin
+          </Heading>
+          <Appear fid="1">
+            <Heading size={5} lineHeight={2} fit textColor="primary" HeadingFont="primary">
+              A Software Engineer Intern
+            </Heading>
+          </Appear>
+        </Slide>
+        <Slide id="react-intro-1" transition={["slide"]} bgColor="black">
+          <Heading caps fit textColor="primary" textFont="primary">
+            What is React?
           </Heading>
         </Slide>
-        <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+        <Slide id="react-list-1" transition={["slide"]} bgColor="black">
+          <List ordered>
+            <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
+            <ListItem textColor='white' textFont='primary'>Props vs State</ListItem>
+            <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
+          </List>
+        </Slide>
+        <Slide id="react-list-2" transition={["none"]} bgColor="black">
+          <List ordered>
+            <ListItem textColor='primary' textFont='primary'>Think in Components</ListItem>
+            <ListItem textColor='white' textFont='primary'>Props vs State</ListItem>
+            <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
+          </List>
+        </Slide>
+        <Slide id="component1" transition={"slide"} bgColor="black">
+          <Image src={images.component1} width="600px" />
+        </Slide>
+        <Slide id="component2" transition={"none"} bgColor="black">
+          <Image src={images.component2} width="600px" />
+        </Slide>
+        <Slide id="component3" transition={"none"} bgColor="black">
+          <Image src={images.component3} width="600px" />
+        </Slide>
+        <Slide id="component4" transition={"none"} bgColor="black">
+          <Image src={images.component4} width="600px" />
+        </Slide>
+        <Slide id="component5" transition={"none"} bgColor="black">
+          <Image src={images.component5} width="600px" />
+        </Slide>
+        <Slide id="live-coding1" transition={["slide"]} bgColor="white">
+          <Heading size={2} caps fit textColor="black" textFont="primary">
+            Live Coding....
+          </Heading>
+          <Appear>
+            <div>
+              <Heading size={2} caps fit textColor="black" textFont="primary">
+                Build a Component for ...
+              </Heading>
+              <Image src={images.todo} width='1000' />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide id="github-live-coding" transition={["slide"]} bgColor="black">
+          <Heading size={2} caps fit textColor="primary" textFont="primary">
+            https://github.com/alvinkl/react-tutorial
+          </Heading>
+        </Slide>
+        <Slide id="live-coding1-res" transition={["slide"]} bgColor="black" align='center'>
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-1.example")} margin="20px auto" />
+        </Slide>
+        <Slide id="react-list-3" transition={["none"]} bgColor="black">
+          <List ordered>
+            <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
+            <ListItem textColor='primary' textFont='primary'>Props vs State</ListItem>
+            <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
+          </List>
+        </Slide>
+        <Slide id="live-coding2" transition={["slide"]} bgColor="white">
+          <Heading size={2} caps fit textColor="black" textFont="primary">
+            Another Live Coding.... Let's continue!!
+          </Heading>
+          <Image src={images.todo} width='1000' />
+        </Slide>
+        <Slide id="live-coding2-res" transition={["slide"]} bgColor="black" align='center'>
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-2.example")} margin="20px auto" />
+        </Slide>
+        <Slide id="live-coding2-res1" transition={["slide"]} bgColor="black" align='center'>
+          <Heading size={6} fit textColor="primary" textFont="primary">
+            One Liner to the rescue!!!
+          </Heading>
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-2-1.example")} margin="20px auto" />
+        </Slide>
+        <Slide id="react-list-4" transition={["none"]} bgColor="black">
+          <List ordered>
+            <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
+            <ListItem textColor='white' textFont='primary'>Props vs State</ListItem>
+            <ListItem textColor='primary' textFont='primary'>Smart & Dumb Components</ListItem>
+          </List>
+        </Slide>
+        <Slide id="smart-dumb" transition={["slide"]} bgColor="white" >
+          <Image src={images.smartDumb} width='1000'/>
+        </Slide>
+        <Slide id="react-intro-3" transition={["slide"]} bgColor="black">
+          <Heading size={2} caps fit textColor="primary" textFont="primary" display="absolute">
+            Why React?
+          </Heading>
+          <Appear>
+            <Image src={images.charts} display="absolute" />
+          </Appear>
+        </Slide>
+        <Slide id="wait-what" transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+          <Heading size={2} caps fit textColor="primary" textFont="primary">
+            Live Coding
+          </Heading>
+        </Slide>
+        <Slide transition={["zoom", "fade"]} bgColor="primary">
           <CodePane lang="jsx" source={require("raw-loader!../assets/deck.example")} margin="20px auto" />
         </Slide>
-      </Deck>
-    );
+      </Deck>;
   }
 }
