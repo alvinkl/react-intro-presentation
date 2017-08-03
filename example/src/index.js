@@ -189,18 +189,18 @@ export default class Presentation extends React.Component {
           ranges={[
             { loc: [0, 2] }, // import
             { loc: [3, 4] }, // TodoListContainer
-            { loc: [73, 77] }, // TodoList
-            { loc: [86, 90] }, // TodoSubmit
-            { loc: [51, 71] }, // render
+            { loc: [75, 79] }, // TodoList
+            { loc: [90, 94] }, // TodoSubmit
+            { loc: [51, 73] }, // render
             { loc: [4, 25] }, // initial constructor
-            { loc: [57, 63] }, // rendering todolist
-            { loc: [73, 85] }, // props being passed to TodoList
+            { loc: [57, 64] }, // rendering todolist
+            { loc: [75, 89] }, // props being passed to TodoList
             { loc: [7, 24] }, // state
-            { loc: [63, 68] }, // rendering TodoSubmit
-            { loc: [86, 101] }, // props being passed to TodoSubmit
+            { loc: [64, 70] }, // rendering TodoSubmit
+            { loc: [90, 105] }, // props being passed to TodoSubmit
             { loc: [26, 44] }, // Functions to pass as props to TodoSubmit
             { loc: [44, 50] }, // Functions to pass as props to TodoList
-            { loc: [102, 105], title: "Render!!" } // render
+            { loc: [106, 109], title: "Render!!" } // render
           ]}/>
         <Slide id="react-intro-3" transition={["slide"]} bgColor="black">
           <Heading size={2} caps fit textColor="primary" textFont="primary" display="absolute">

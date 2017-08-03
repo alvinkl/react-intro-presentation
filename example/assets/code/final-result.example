@@ -55,13 +55,15 @@ class TodoListContainer extends Component {
     return (
       <div>
         <h1>Todo</h1>
-        { todoList.map((todo, i) => 
+        { 
+          todoList.map((todo, i) => 
           TodoList(
             todo, 
             i, 
             this.markDone))
         }
-        { TodoSubmit(
+        { 
+          TodoSubmit(
           input, 
           this.onInputChange, 
           this.addTodo)
@@ -78,9 +80,11 @@ const TodoList = (
   <li
     key={ i }
     onClick={ markDone.bind(this, i) }
-    style={ todo.done 
+    style={ 
+      todo.done 
       ? { textDecoration: "line-through" } 
-      : {} }>
+      : {} 
+    }>
     {todo.name}
   </li>;
 
