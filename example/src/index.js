@@ -28,6 +28,7 @@ const images = {
   todo2: require('../assets/todolist2.png'),
   stateComp: require('../assets/stateful-stateless.jpg'),
   smartDumb: require('../assets/smart-dumb.png'),
+  lifecycle: require('../assets/lifecycle.png'),
 };
 
 preloader(images);
@@ -166,6 +167,17 @@ export default class Presentation extends React.Component {
             <CodePane lang="jsx" source={require("raw-loader!../assets/code/smart-dumb-comp-3-2.example")} margin="20px auto" />
           </Appear>
         </Slide>
+        <Slide id="live-coding3" transition={["slide"]} bgColor="white">
+          <Heading size={2} caps fit textColor="black" textFont="primary">
+            Live Coding....
+          </Heading>
+        </Slide>
+        <Slide id="component-life" transition={["slide"]} bgColor="black" align='center'>
+          <Heading size={6} fit textColor="primary" textFont="primary">
+            Component Lifecycle
+          </Heading>
+          <Image src={ images.lifecycle } width='1000' />
+        </Slide>
         <Slide id="react-intro-3" transition={["slide"]} bgColor="black">
           <Heading size={2} caps fit textColor="primary" textFont="primary" display="absolute">
             Why React?
@@ -174,13 +186,20 @@ export default class Presentation extends React.Component {
             <Image src={images.charts} display="absolute" />
           </Appear>
         </Slide>
-        <Slide id="wait-what" transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-          <Heading size={2} caps fit textColor="primary" textFont="primary">
-            Live Coding
+        <Slide id="react-sum-1" transition={["slide"]} bgColor="black">
+          <Heading caps fit textColor="primary" textFont="primary">
+            Sum up
           </Heading>
+          <List ordered>
+            <ListItem textColor='primary' textFont='primary'>Think in Components</ListItem>
+            <ListItem textColor='primary' textFont='primary'>Props vs State</ListItem>
+            <ListItem textColor='primary' textFont='primary'>Smart & Dumb Components</ListItem>
+          </List>
         </Slide>
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
-          <CodePane lang="jsx" source={require("raw-loader!../assets/deck.example")} margin="20px auto" />
+        <Slide id="react-sum-2" transition={["zoom"]} bgColor="black">
+          <Heading caps fit textColor="primary" textFont="primary">
+            React is awesome!!
+          </Heading>
         </Slide>
       </Deck>;
   }
