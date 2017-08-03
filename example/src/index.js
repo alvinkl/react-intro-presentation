@@ -24,7 +24,8 @@ const images = {
   component3: require('../assets/component3.png'),
   component4: require('../assets/component4.png'),
   component5: require('../assets/component5.png'),
-  todo: require('../assets/todolist.png'),
+  todo1: require('../assets/todolist.png'),
+  todo2: require('../assets/todolist2.png'),
   stateComp: require('../assets/stateful-stateless.jpg'),
   smartDumb: require('../assets/smart-dumb.png'),
 };
@@ -97,7 +98,7 @@ export default class Presentation extends React.Component {
               <Heading size={2} caps fit textColor="black" textFont="primary">
                 Build a Component for ...
               </Heading>
-              <Image src={images.todo} width='1000' />
+              <Image src={images.todo1} width='400' />
             </div>
           </Appear>
         </Slide>
@@ -120,7 +121,7 @@ export default class Presentation extends React.Component {
           <Heading size={2} caps fit textColor="black" textFont="primary">
             Another Live Coding.... Let's continue!!
           </Heading>
-          <Image src={images.todo} width='1000' />
+          <Image src={images.todo2} width='400' />
         </Slide>
         <Slide id="live-coding2-res" transition={["slide"]} bgColor="black" align='center'>
           <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-2.example")} margin="20px auto" />
@@ -140,6 +141,30 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="smart-dumb" transition={["slide"]} bgColor="white" >
           <Image src={images.smartDumb} width='1000'/>
+        </Slide>
+        <Slide id="smart-dumb-1" transition={["slide"]} bgColor="black" align='center'>
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/smart-dumb-comp1.example")} margin="20px auto" />
+        </Slide>
+        <Slide id="smart-dumb-2" transition={["slide"]} bgColor="black" align='center'>
+          <Heading size={6} fit textColor="primary" textFont="primary">
+            Smart Component
+          </Heading>
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/smart-dumb-comp2.example")} margin="20px auto" />
+        </Slide>
+        <Slide id="smart-dumb-3" transition={["slide"]} bgColor="black" align='center'>
+          <Heading size={6} fit textColor="primary" textFont="primary">
+            DUHHHH Component
+          </Heading>
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/smart-dumb-comp3.example")} margin="20px auto" />
+        </Slide>
+        <Slide id="smart-dumb-3-1" transition={["slide"]} bgColor="black" align='center'>
+          <Heading size={6} fit textColor="primary" textFont="primary">
+            One Liner to the rescue!!!
+          </Heading>
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/smart-dumb-comp-3-1.example")} margin="20px auto" />
+          <Appear>
+            <CodePane lang="jsx" source={require("raw-loader!../assets/code/smart-dumb-comp-3-2.example")} margin="20px auto" />
+          </Appear>
         </Slide>
         <Slide id="react-intro-3" transition={["slide"]} bgColor="black">
           <Heading size={2} caps fit textColor="primary" textFont="primary" display="absolute">

@@ -1,0 +1,21 @@
+class TodoList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <li>{ this.props.todo }</li>
+  }
+}
+
+class TodoSubmit extends Component {
+  render() {
+    return (
+      <div>
+        Title:
+        <input type="text" />
+        <button>Submit</button>
+      </div>
+    )
+  }
+}

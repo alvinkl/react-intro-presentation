@@ -1,0 +1,9 @@
+const TodoList = todo => <li>{ todo }</li>
+
+const TodoSubmit = props => (
+  <div>
+    Title:
+    <input type="text" />
+    <button>Submit</button>
+  </div>
+)

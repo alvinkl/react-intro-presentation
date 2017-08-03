@@ -1,15 +1,19 @@
 class TodoListContainer extends Component {
   constructor() {
     super();
+
+    this.state = {
+      todoList: ['Sleep', 'Coding', 'Movie'],
+    }
   }
 
   render() {
+    const { todoList } = this.state;
+
     return (
       <div>
         <h1>Todo</h1>
-        <TodoList />
-        <TodoList />
-        <TodoList />
+        { todoList.map((todo, i) => <TodoList key={i} todo={ todo } />) }
         <TodoSubmit />
       </div>
     )
@@ -17,8 +21,12 @@ class TodoListContainer extends Component {
 }
 
 class TodoList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return <li>Code</li>
+    return <li>{ this.props.todo }</li>
   }
 }
 
@@ -33,5 +41,3 @@ class TodoSubmit extends Component {
     )
   }
 }
-
-ReactDOM.render(<TodoListContainer />, document.getElementById('root'));
