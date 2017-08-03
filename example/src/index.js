@@ -46,16 +46,6 @@ export default class Presentation extends React.Component {
             Introduction to React JS
           </Heading>
         </Slide>
-        <Slide id="introduction-myself" transition={["slide"]} bgColor="black">
-          <Heading size={3} textColor="primary" textFont="primary" fit>
-            Hello, my name is Alvin
-          </Heading>
-          <Appear fid="1">
-            <Heading size={5} lineHeight={2} fit textColor="primary" HeadingFont="primary">
-              A Software Engineer Intern
-            </Heading>
-          </Appear>
-        </Slide>
         <Slide id="react-intro-1" transition={["slide"]} bgColor="black">
           <Heading caps fit textColor="primary" textFont="primary">
             What is React?
@@ -63,13 +53,26 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="react-list-1" transition={["slide"]} bgColor="black">
           <List ordered>
+            <ListItem textColor='white' textFont='primary'>JSX</ListItem>
             <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
             <ListItem textColor='white' textFont='primary'>Props vs State</ListItem>
             <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
           </List>
         </Slide>
+        <Slide id="react-list-11" transition={["slide"]} bgColor="black">
+          <List ordered>
+            <ListItem textColor='primary' textFont='primary'>JSX</ListItem>
+            <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
+            <ListItem textColor='white' textFont='primary'>Props vs State</ListItem>
+            <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
+          </List>
+        </Slide>
+        <Slide id="react-1-code" transition={["slide"]} bgColor="black">
+          <ComponentPlayground theme='dark' code={require('raw-loader!../assets/code/jsx.example')} />
+        </Slide>
         <Slide id="react-list-2" transition={["none"]} bgColor="black">
           <List ordered>
+            <ListItem textColor='white' textFont='primary'>JSX</ListItem>
             <ListItem textColor='primary' textFont='primary'>Think in Components</ListItem>
             <ListItem textColor='white' textFont='primary'>Props vs State</ListItem>
             <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
@@ -112,7 +115,8 @@ export default class Presentation extends React.Component {
           <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-1.example")} margin="20px auto" />
         </Slide>
         <Slide id="react-list-3" transition={["none"]} bgColor="black">
-          <List ordered>
+        <List ordered>
+            <ListItem textColor='white' textFont='primary'>JSX</ListItem>
             <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
             <ListItem textColor='primary' textFont='primary'>Props vs State</ListItem>
             <ListItem textColor='white' textFont='primary'>Smart & Dumb Components</ListItem>
@@ -135,6 +139,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="react-list-4" transition={["none"]} bgColor="black">
           <List ordered>
+            <ListItem textColor='white' textFont='primary'>JSX</ListItem>
             <ListItem textColor='white' textFont='primary'>Think in Components</ListItem>
             <ListItem textColor='white' textFont='primary'>Props vs State</ListItem>
             <ListItem textColor='primary' textFont='primary'>Smart & Dumb Components</ListItem>
@@ -191,6 +196,7 @@ export default class Presentation extends React.Component {
             Sum up
           </Heading>
           <List ordered>
+            <ListItem textColor='primary' textFont='primary'>JSX</ListItem>
             <ListItem textColor='primary' textFont='primary'>Think in Components</ListItem>
             <ListItem textColor='primary' textFont='primary'>Props vs State</ListItem>
             <ListItem textColor='primary' textFont='primary'>Smart & Dumb Components</ListItem>
