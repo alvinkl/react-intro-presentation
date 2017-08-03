@@ -114,7 +114,7 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide id="live-coding1-res" transition={["slide"]} bgColor="black" align='center'>
-          <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-2.example")} margin="20px auto" />
+          <CodePane lang="jsx" source={require("raw-loader!../assets/code/live-coding-1.example")} margin="20px auto" />
         </Slide>
         <Slide id="react-list-3" transition={["none"]} bgColor="black">
         <List ordered>
